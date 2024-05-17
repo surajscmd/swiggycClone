@@ -1,40 +1,51 @@
 import React from 'react'
-import HeadLine from './HeadLine'
 import Star from "../assets/star.svg"
 import Cycle from "../assets/cycle.avif"
 import clock from "../assets/clock-color-icon.svg"
-const Items = () => {
-  return (
-    
+import { main_Resto_url } from '../utils/Constants'
+const Items = ({info}) => {
+  const charges = Math.floor(Math.random() * (80 - 40 + 1) + 40); 
+  const time = ["10-15", "15-20", "20-25", "25-30", "30-35", "35-40", "45-50"]
+  const randomIndex = Math.floor(Math.random() * time.length);
+  const distance = (Math.random() * (3.2 - 1.2 + 1) + 1.2).toFixed(1)
+  
+  return (  
     <div className='Resto-item-container'>
        <div className='second-continer'>
+
+        <div className='item-container-flex'>
+          <div>
         <div className='rating-container'>
             <img className="star-icon" src={Star} alt='star'/>
-            <div className='rate'>4.1 </div>
-            <div className='strike-rate rate '>(100+ ratings)</div>
+            <div className='rate'>{info?.avgRatingString}</div>   
             <p className='dot'> • </p>
-            <p className='for-two' >₹600 for two</p>
-            
+            <p className='for-two' >{info?.costForTwoMessage}</p>   
         </div>
-       
-        <div>
-          <p className='cuzens'>North Indian,Barbecue</p>
+           <p className='locality-itm'> {info?.areaName} , {info?.locality}</p>
+          <p className='cuzens'>{info?.cuisines.join(" , ")}</p>
           
           <div className='icons-container'>
+          <div className='strike-rate rate '>{info?.totalRatingsString}</div>
           <div className='flex-horizontel'>
              <img className="clock-icon" src={clock} alt='star'/>
-             <p className='time' >Reach By - 30-35 mins</p>
-
+             <p className='time' >Reach By - {time[randomIndex]} min</p>
+              
           </div>
-
+          
           <div className='flex-horizontel'>
               <img className="cycle-icon" src={Cycle} alt='star'/>
-              <p className='distance'> 1.4 kms Distance from You </p>
+              <p className='distance'> {distance} kms Distance from You </p>
           </div>
+
           </div >
-          
-            <p className='delivery-charge' >₹51 Delivery fee will apply</p>
-        </div>
+          </div>
+          <div>
+                  <img className="resto-iem-img" src={main_Resto_url +info?.cloudinaryImageId} alt='star'/>
+          </div>
+          </div>
+            <p className='delivery-charge' >₹{charges} Delivery fee will apply</p>
+        
+               
         </div>
     </div>
   )

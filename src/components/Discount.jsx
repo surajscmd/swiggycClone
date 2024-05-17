@@ -1,12 +1,13 @@
 import React from 'react'
 import Genaric from "../assets/generic.avif"
-const Discount = () => {
+import { DISCOUNT_URL } from '../utils/Constants'
+const Discount = ({infors}) => {
   return (
-    <div className='flex-horizontel border'>
-       <img className='discount-img' src={Genaric} alt="this img" />
+    <div className='discount-ult-box'>
+       <img className='discount-img' src={DISCOUNT_URL + infors?.info?.offerLogo} alt={Genaric} />
        <div className='flex-vertical'>
-           <p className='dis-row-one'> 50% Off Upto ₹100</p>
-           <p className='dis-row-two'> USE SWIGGY50</p>
+           <p className='dis-row-one'> {infors?.info?.header}</p>
+           <p className='dis-row-two'> {infors?.info?.couponCode}</p>
        </div>
        
     </div>

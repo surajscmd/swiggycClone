@@ -1,0 +1,18 @@
+import React from 'react'
+import Navbar from '../components/Navbar'
+import { Outlet } from 'react-router-dom'
+import useRestaurent from '../Hooks/useRestaurent'
+
+const Body = () => {
+ 
+ useRestaurent();
+
+  return (
+    <div>
+       <Navbar/>
+       <Outlet/>
+    </div>
+  )
+}
+
+export default Body

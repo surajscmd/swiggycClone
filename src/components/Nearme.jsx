@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Nearme = () => {
+const Nearme = ({link, text}) => {
+  
   return (
     <div className='nearme-container'>
-        <a href="https://www.swiggy.com/gujarati-restaurants-near-me" target='blank' className='nearme-tabs'>
-        <p>North Indian Restaurant Near Me</p>
+        <a href={link} target='blank' className='nearme-tabs'>
+        <p>{text.substr(0,30)}</p>
         </a>
     </div>
   )

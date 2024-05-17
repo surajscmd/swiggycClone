@@ -6,8 +6,11 @@ const PlaystoreFlex = () => {
   return (
     <div className='play-container'>
         <p className='play-heading'>For better experience,download the Swiggy app now</p>
-        <img className='play-img'  src={Play} alt="play banner" />
-        <img className='play-img' src={App} alt="App banner"  />
+        <a href="https://play.google.com/store/apps/details?id=in.swiggy.android&referrer=utm_source%3Dswiggy%26utm_medium%3Dheader" target='blank'>
+        <img className='play-img'  src={Play} alt="play banner" /></a>
+        
+        <a href="https://itunes.apple.com/in/app/id989540920?referrer=utm_source%3Dswiggy%26utm_medium%3Dhomepage" target='blank'>
+        <img className='play-img' src={App} alt="App banner"/></a>
     </div>
   )
 }
