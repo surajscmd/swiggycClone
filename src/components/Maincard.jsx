@@ -18,7 +18,7 @@ const Maincard = ({restaurants}) => {
         <img className='img-card' src={main_Resto_url + restaurants?.info?.cloudinaryImageId} alt="this img" />
          <div className='gradient'> </div>
         <div className='offer-highligt'>
-          <p className='offer-style'>{restaurants?.info?.aggregatedDiscountInfoV3 == null? " " : restaurants?.info?.aggregatedDiscountInfoV3?.header  + restaurants?.info?.aggregatedDiscountInfoV3?.subHeader}</p>     
+          <p className='offer-style'>{restaurants?.info?.aggregatedDiscountInfoV3 == null? " " : restaurants?.info?.aggregatedDiscountInfoV3?.header  + " " + (!restaurants?.info?.aggregatedDiscountInfoV3?.subHeader ? " ": restaurants?.info?.aggregatedDiscountInfoV3?.subHeader )}</p>     
         </div>
     </div> 
     <div className='info-container'>

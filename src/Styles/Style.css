@@ -407,7 +407,7 @@
     width: 90px;
     height: 30px;
     padding: 5px 10px;
-    background-color: #fff;
+    
     border-radius: 7px;
     font-weight: 600;
     font-size: 10px;
@@ -415,18 +415,19 @@
 
 .add-btn{
     border: 2px solid rgb(11, 221, 11);
-    color:rgb(11, 221, 11) ;
+    background-color: rgb(11, 221, 11);
+    color:#fff ;
 }
 .add-btn:hover{
-    color:rgb(255, 255, 255);
+    color:rgb(11, 221, 11);
     font-weight: 600;
-    background-color:rgb(11, 221, 11) ;
+    background-color:#fff ;
     cursor: pointer;
 }
 
 .remove-btn{
     border: 2px solid rgb(221, 11, 11);
-
+    background-color: #fff;
     color:rgb(221, 11, 11);
 }
 .remove-btn:hover{
@@ -1091,4 +1092,25 @@
 }
 .sign-in-ancor{
     cursor: pointer;
+}
+
+/* acordian*/
+
+.accordin-con{
+    background-color: #fffefb;
+    height: 50px;
+    width: 850px;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 0px  10px;
+    cursor: pointer;
+}
+.center-co{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

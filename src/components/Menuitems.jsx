@@ -6,7 +6,9 @@ import { MENU_ITEMS } from '../utils/Constants'
 
 const Menuitems = ({info}) => {
   return (
-    <div className='menuitem-container' >
+
+    <div>
+      <div className='menuitem-container' >
        <div className='left-continer'>
          <div>
             {info?.card?.info?.isVeg == 1?  <img className='veg-icon' src={veg} alt="veg" /> :<img className='veg-icon' src={nonveg} alt="non-veg" />}    
@@ -30,6 +32,9 @@ const Menuitems = ({info}) => {
            </div>
        </div>
     </div>
+
+    </div>
+    
   )
 }
 

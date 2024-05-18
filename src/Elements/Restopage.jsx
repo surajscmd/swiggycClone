@@ -20,8 +20,10 @@ const Restopage = () => {
           <Restolist/>
         </div>
 
-       <div className='resto-banners'>
+       <div>
+        <div className='section-one'>
            <Linktabs/>
+        </div>     
        </div>
 
           
