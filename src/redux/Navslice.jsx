@@ -4,12 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const navslice = createSlice({
     name:"navdetails",
     initialState:{
-        searchvalue : " ",
+        value : " ",
         toprated : false,
     },
     reducers:{
-        addsearchvalue: (state, action) =>{
-            state.searchvalue = action.payload; 
+        addvalue: (state, action) =>{
+            state.value = action.payload; 
         },
         addToprated:(state)=>{
             !state.toprated == state.toprated
@@ -18,5 +18,5 @@ const navslice = createSlice({
     }
 })
 
-export const {addsearchvalue, addToprated} = navslice.actions;
+export const {addvalue, addToprated} = navslice.actions;
 export default navslice.reducer;

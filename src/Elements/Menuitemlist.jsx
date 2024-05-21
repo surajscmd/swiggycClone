@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Menuitems from '../components/Menuitems'
-import Subliner from '../components/Subliner'
+
 import down from '../assets/chevron-double-down.svg'
 const Menuitemlist = ({info , isVeg}) => {
  
@@ -16,8 +16,8 @@ const Menuitemlist = ({info , isVeg}) => {
             <div className= {data?.card?.card?.title?  'accordin-con'  : "d-none"}  onClick={() => {setShowIndex(index)
                 setopenAcc(!openAcc)
             }}>
-                <Subliner props={data?.card?.card?.title} />
-                <img className='' src={down} alt="" />
+                <p className='acorin-headline'>{data?.card?.card?.title}</p>
+                <img className='acc-logo' src={down} alt="" />
             </div>
               
              {/* {data?.card?.card?.itemCards?.map((itemData) =>                

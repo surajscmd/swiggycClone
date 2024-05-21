@@ -12,12 +12,8 @@ import Shimmer from '../components/Shimmer';
  
 const Menupage = () => {
   const { resId } = useParams();
-  
   const resInfo = useMenu(resId);
-  console.log(resInfo);
-  
   const[isveg , setisveg] = useState(false);
-
   const onlyVeg =  () => {
     if(!isveg){
       setisveg(true)
@@ -25,7 +21,6 @@ const Menupage = () => {
     else{
       setisveg(false)
     }
-    
   }
   if (!resInfo) return (
     <div className='section-one'>
@@ -61,7 +56,6 @@ const Menupage = () => {
          
          </div>
       </div>
-       
         <div className='footer-menu'>
              <Itemfooter info={resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR}/>
         </div>     

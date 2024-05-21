@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import lens from '../assets/search.svg'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Signinrout from '../Elements/Signinrout';
 
 const Navbar = () => {
      const navigate = useNavigate();
      const dispatch = useDispatch();
- 
+     const cartitems = useSelector((store)=> store.cart.cartItems)
     
      const setsearchscreen = () => {
           navigate("/search");
@@ -28,7 +28,7 @@ const Navbar = () => {
        <div className='right-container'>
             <button  className='ser-btn'  onClick={setsearchscreen}><div className='flex-btn'><span>Search</span> <img src={lens} alt="." /></div> </button>
             <a  className='sign-in-ancor'  onClick={() => setModalOpen(true)}> <span>Sign-in</span></a>
-            <a href="" className='cart-anchor'> <span> Cart </span><span className='cart-no'>[4]</span> </a>
+            <NavLink to={"/cart"} className='cart-anchor'><span> Cart </span><span className='cart-no'>[{cartitems?.length}]</span></NavLink>
        </div>
       
        
