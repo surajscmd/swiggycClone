@@ -3,6 +3,9 @@ import navdetailsReducer from "./Navslice";
 import restoReducer from "./Restoslice";
 import cartReducer from "./Cartslice";
 
+
+
+
 const appstore = configureStore({
     reducer:{
         navdetails : navdetailsReducer,
