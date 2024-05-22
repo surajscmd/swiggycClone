@@ -32,15 +32,10 @@ const Topchain = () => {
         {[...Array(7)].map((e,i)=><Shimmercircle key={i}/>)}
     </div>
     </div>
-    
   )  
     return (
     <div className='topsconainer'>
       <HeadLine props={resturents?.data?.cards[1]?.card?.card?.header?.title}/>
-       
-
-
-       
        <div class="button-contianer">
         <button className='btn-lf-rt'
           onClick={() => {
@@ -60,16 +55,8 @@ const Topchain = () => {
       </div>
       <div class="img-container-two" ref={elementRef}>
             {resturents?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants.map((resto)=>  <Maincard key={resto?.info?.id}  restaurants={resto}  />)}
-      </div>
-
-          
-      
-       </div>
-
-     
-      
-  
-    
+      </div>  
+    </div>    
   )
 }
 

@@ -38,9 +38,6 @@ if (!resturents) return (
 return (
     <div className='topsconainer'>
         <HeadLine props={resturents?.data?.cards[0]?.card?.card?.header?.title} />
-       
-       
-    
     <div class="button-contianer">
         <button className='btn-lf-rt'
           onClick={() => {
@@ -63,7 +60,6 @@ return (
       <div class="img-container" ref={elementRef}>
             {resturents?.data?.cards[0]?.card?.card?.imageGridCards?.info.map((banner)=><Banners key={banner?.id} link={banner?.action?.link} imageurl={banner?.imageId}  />)}
       </div>         
-    
     </div>         
     
   )

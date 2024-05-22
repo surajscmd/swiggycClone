@@ -13,19 +13,18 @@ const Restopage = () => {
     <div>
         <div>
         <Topbar/>
-        </div>    
-        <div className='resto-banners'>
+        </div> 
+        <div className='resto-mid-sec'>
+         <div className='resto-banners'>
           <Topslider/>
           <Topchain/>
           <Restolist/>
         </div>
-
-       <div>
-        <div className='section-one'>
+        <div>
            <Linktabs/>
         </div>     
-       </div>
-
+        
+        </div>   
           
         <div>
            <PlaystoreFlex/>
