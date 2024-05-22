@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState ,useMemo} from 'react'
 import { useSelector } from 'react-redux'
 
 const Bill = () => {
     const cartitems = useSelector((store)=> store.cart.cartItems)
     const deliveryCharges = useSelector((store)=> store.navdetails.value)
-    const induvisualTotal = cartitems.map((data)=>(((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100)) * data?.quantity) 
-    const totalsum = induvisualTotal.reduce((a,b) => a+b, 0)
-    const gst = ((totalsum * 3)/100)
-    const priceTopay = gst + totalsum + deliveryCharges
-  
+    const induvisualTotal =   useMemo(() => cartitems.map((data)=>(((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100)) * data?.quantity), [cartitems])
+    const totalsum = useMemo(() =>(induvisualTotal.reduce((a,b) => a+b, 0)), [cartitems]) 
+    const gst =   useMemo(() =>((totalsum * 3)/100), [cartitems]) 
+    const priceTopay =useMemo(() =>(gst + totalsum + deliveryCharges), [cartitems]);  
+   
     if (cartitems.length == 0) return (
         <div className='bill-container'>
                 <p className='price-topay-detail'>Your Bill</p>

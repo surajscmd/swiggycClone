@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux'
 import { useRef, useState } from "react";
 import  leftarrow from '../assets/arrow-left.svg'
 import  rightarrow from '../assets/arrow-right.svg'
-import Shimmercircle from '../components/Shimmercircle';
 import Shimmer from '../components/Shimmer';
 const Topslider = () => {
    

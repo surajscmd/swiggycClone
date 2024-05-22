@@ -588,26 +588,38 @@
    text-decoration: none ;
    font-size: 19px;
    font-weight: 500;
-   color: #63687b;
+   color: #4a4d5d;
 }
 .right-container > a:hover{
-    color: #023e98;
+    color: #fc841f;
 }
 .cart-anchor{
     display: flex;
-    gap: 4px;
+    gap: 5px;
 }
 .right-container{
     display: flex;
-    gap: 20px;
-    align-items:first baseline;
-    
+    gap: 40px;
+    align-items:center;
 }
 .cart-no{
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 15px;
+    background-color: #60b246;
+    padding: 2px 7px;
+    color: #fff;
+    clip-path: polygon(20% 0%, 83% 0, 100% 100%, 0% 100%);
 }
-.cart-anchor:hover{
-    color: rgb(12, 247, 12) !important;
+
+/* navicons */
+.icon-svg{
+    width: 18px;
+    padding: 3px;
+}
+.nav-line{
+    display: flex;
+    align-items: center;
+    gap: 07px;
 }
 .nav-container{
     display: flex;
@@ -619,7 +631,9 @@
     gap: 300px;
     border-bottom: 1px solid rgb(185, 183, 183);
 }
-
+.restopage{
+    width: 100vw;
+}
 /* search btn */
 .flex-btn{
     display: flex;
@@ -1271,7 +1285,7 @@
   
 }
 .bill-del{
-    width: 35px;
+    width: 40px;
     text-align: end;
     font-size: 10px;
 }

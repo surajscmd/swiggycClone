@@ -10,7 +10,7 @@ import Linktabs from './Linktabs'
 
 const Restopage = () => {
   return (
-    <div>
+    <div className='restopage'>
         <div>
         <Topbar/>
         </div> 
@@ -23,9 +23,7 @@ const Restopage = () => {
         <div>
            <Linktabs/>
         </div>     
-        
         </div>   
-          
         <div>
            <PlaystoreFlex/>
            <Footer/>

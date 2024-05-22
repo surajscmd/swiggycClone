@@ -3,7 +3,8 @@ import lens from '../assets/search.svg'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Signinrout from '../Elements/Signinrout';
-
+import Person from '../assets/person.svg';
+import cart from '../assets/cart4.svg';
 const Navbar = () => {
      const navigate = useNavigate();
      const dispatch = useDispatch();
@@ -27,8 +28,8 @@ const Navbar = () => {
 
        <div className='right-container'>
             <button  className='ser-btn'  onClick={setsearchscreen}><div className='flex-btn'><span>Search</span> <img src={lens} alt="." /></div> </button>
-            <a  className='sign-in-ancor'  onClick={() => setModalOpen(true)}> <span>Sign-in</span></a>
-            <NavLink to={"/cart"} className='cart-anchor'><span> Cart </span><span className='cart-no'>[{cartitems?.length}]</span></NavLink>
+            <NavLink  className='sign-in-ancor'  onClick={() => setModalOpen(true)}> <span className='nav-line'> <img className='icon-svg' src={Person} alt="App banner"/> <p>Sign-in</p> </span></NavLink>
+            <NavLink to={"/cart"} className='cart-anchor'> <span className='nav-line'> <img className='icon-svg' src={cart} alt="App banner"/> <span> Cart </span><span className='cart-no'>{cartitems?.length}</span></span>   </NavLink>
        </div>
       
        
