@@ -4,11 +4,13 @@ import { useSelector } from 'react-redux'
 const Bill = () => {
     const cartitems = useSelector((store)=> store.cart.cartItems)
     const deliveryCharges = useSelector((store)=> store.navdetails.value)
-    const induvisualTotal =   useMemo(() => cartitems.map((data)=>(((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100)) * data?.quantity), [cartitems])
-    const totalsum = useMemo(() =>(induvisualTotal.reduce((a,b) => a+b, 0)), [cartitems]) 
-    const gst =   useMemo(() =>((totalsum * 3)/100), [cartitems]) 
-    const priceTopay =useMemo(() =>(gst + totalsum + deliveryCharges), [cartitems]);  
-   
+    let induvisualTotal =   useMemo(() =>(cartitems.map((data)=>((((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100))) * data?.quantity)), [cartitems])
+    let totalsum = useMemo(() =>(induvisualTotal.reduce((a,b) => a+b, 0)), [cartitems])
+    const finalsum = parseFloat(totalsum).toFixed(2) 
+    const gst =   useMemo(() =>((totalsum * 3)/100), [cartitems]); 
+    const tax = parseFloat(gst).toFixed(2) 
+    let priceTopay = parseFloat(gst + totalsum + deliveryCharges);  
+    priceTopay = priceTopay.toFixed(2)
     if (cartitems.length == 0) return (
         <div className='bill-container'>
                 <p className='price-topay-detail'>Your Bill</p>
@@ -25,16 +27,16 @@ const Bill = () => {
           <div className='bill-detail-sec' key={data?.card?.info?.id}>   
             <p className='bill-del-lg'> {data?.card?.info?.name.length < 40 ? data?.card?.info?.name.substr(0, 41) : data?.card?.info?.name.substr(0, 41) + "..." }</p> 
             <p className='bill-del'>{((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100)} X {data?.quantity}</p>
-            <p className='bill-del'>₹{(((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100)) * data?.quantity}</p>      
+            <p className='bill-del'>₹{((((data?.card?.info?.defaultPrice) / 100) || ((data?.card?.info?.price) / 100)) * data?.quantity).toFixed(2)}</p>      
            </div> ))}
        </div>
         <div className='tol-det-container'>
             <p className='price-detail'>Total Price </p>
-            <p className='sum-items'>{totalsum}</p>
+            <p className='sum-items'>{finalsum}</p>
         </div>
         <div className='tol-det-container'>
             <p className='price-detail'>GST</p>
-            <p className='sum-items'>{gst}</p>
+            <p className='sum-items'>{tax}</p>
         </div>
         <div className='tol-det-container'>
             <p className='price-detail'>Delivery charges</p>

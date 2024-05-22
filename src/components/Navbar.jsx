@@ -28,8 +28,8 @@ const Navbar = () => {
 
        <div className='right-container'>
             <button  className='ser-btn'  onClick={setsearchscreen}><div className='flex-btn'><span>Search</span> <img src={lens} alt="." /></div> </button>
-            <NavLink  className='sign-in-ancor'  onClick={() => setModalOpen(true)}> <span className='nav-line'> <img className='icon-svg' src={Person} alt="App banner"/> <p>Sign-in</p> </span></NavLink>
-            <NavLink to={"/cart"} className='cart-anchor'> <span className='nav-line'> <img className='icon-svg' src={cart} alt="App banner"/> <span> Cart </span><span className='cart-no'>{cartitems?.length}</span></span>   </NavLink>
+            <NavLink  className='sign-in-ancor'  onClick={() => setModalOpen(true)}> <span className='nav-line'> <img className='icon-svg' src={Person} alt="App banner"/> <p className='nav-word'>Sign-in</p> </span></NavLink>
+            <NavLink to={"/cart"} className='cart-anchor'> <span className='nav-line'> <img className='icon-svg' src={cart} alt="App banner"/> <span className='nav-word'> Cart </span><span className='cart-no'>{cartitems?.length}</span></span>   </NavLink>
        </div>
       
        
