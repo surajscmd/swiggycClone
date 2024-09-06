@@ -9,10 +9,14 @@ import Discountelement from './Discountelement';
 import Subliner from '../components/Subliner';
 import Shimmercard from '../components/Shimmercard';
 import Shimmer from '../components/Shimmer';
+import { useSelector } from 'react-redux';
  
 const Menupage = () => {
-  const { resId } = useParams();
-  const resInfo = useMenu(resId);
+  const parameter = useParams();
+  const resId = parameter.resId
+  const resInfo  = useMenu(resId);
+  console.log(resInfo);
+  //const resInfo = useSelector((store)=> store.resto.menuitems) 
   const[isveg , setisveg] = useState(false);
   const onlyVeg =  () => {
     if(!isveg){

@@ -8,8 +8,7 @@ const useRestaurent = () =>{
   const  getRestaurent = async () =>{
   const data = await fetch(RESO_LIST_URL)
   const json = await data.json();
-  // console.log(json);
-  dispatch(addrestaurent(json)); 
+   dispatch(addrestaurent(json)); 
 }
 useEffect(()=>{
  getRestaurent();

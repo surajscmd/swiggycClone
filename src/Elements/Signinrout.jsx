@@ -17,7 +17,6 @@ const Signinrout = ({setOpenModal}) => {
 
   return (
     <div  ref={modelref}  onClick={closemodel} className='model-container' >
-        
         <div className='popup-section'>
             <a onClick={() => {
               setOpenModal(false);

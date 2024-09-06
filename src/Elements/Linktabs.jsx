@@ -18,15 +18,10 @@ const Linktabs = () => {
         <div >
                <HeadLine props={resturents?.data?.cards[6]?.card?.card?.title} />
         <div className='nearme-comtainers'>
-
                {showmore? resturents?.data?.cards[6]?.card?.card?.brands?.slice(0, num).map((data)=> <Nearme link={data?.link}  text={data?.text} /> ) : resturents?.data?.cards[6]?.card?.card?.brands?.map((data)=> <Nearme link={data?.link}  text={data?.text} /> )  }
-               
-         
-        
           <button className='btn-show' onClick={()=>setshowmore(!showmore)}>{showmore? "showmore" : "showless"}</button> 
           </div>
         </div>
-
         <div>
                <HeadLine props={resturents?.data?.cards[7]?.card?.card?.title} />
         <div className='nearme-comtainers'>

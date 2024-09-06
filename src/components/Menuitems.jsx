@@ -3,14 +3,13 @@ import veg from "../assets/veg.png"
 import nonveg from "../assets/non-veg.png"
 import { MENU_ITEMS } from '../utils/Constants'
 import { useDispatch, useSelector } from 'react-redux'
-import { addcart , removeFromCart, decrementQuantity} from "../redux/Cartslice"
+import { addcart , decrementQuantity} from "../redux/Cartslice"
 
 const Menuitems = ({info}) => {
-  
   const cartitems = useSelector((store)=> store.cart.cartItems)
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState("0");
-  const[add ,setadd] = useState(false)
+  const[add , setadd] = useState(false)
   useEffect(() =>  {
       const index = cartitems.findIndex((item) => item?.card?.info?.id === info?.card?.info?.id)
       if (index !== -1) {

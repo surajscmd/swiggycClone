@@ -26,7 +26,7 @@ const Cartlist = () => {
       if (cartitems.length == 0) return (
         <div className='cart-items-container'>
             <div className='empty-container'>
-               <p className='cart-heading-empty'>Your Cart empty</p>
+               <p className='cart-heading-empty'>Your Cart is empty</p>
                <img className='empty-img' src={emptycart} alt="" /> 
             </div>
         </div>
@@ -35,7 +35,7 @@ const Cartlist = () => {
     <div className='cart-items-container'>
         <div className='cart-item-header'>
             <img className='cart-icon' src={cart} alt="" /> 
-            <p className='cart-heading-empty'>Explore your Items</p>
+            <p className='cart-heading-empty'>Explore your  Items</p>
             <button className='btn cler-btn'  onClick={() => handleEmptyItem()}>Empty Cart</button>
         </div>
     {cartitems.map((data) => (   
